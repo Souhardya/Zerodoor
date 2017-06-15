@@ -6,6 +6,8 @@ Once you generate the payload somehow execute on the concerned system either Win
 Once executed you will have the capability of executing remote commands on the compromised host :) 
 Happy Hacking :D
 
+If you want to copy please give formal credits to the author or simply fork it :)
+
 # Usage 
 ```
 python zerodoor.py
