@@ -2,7 +2,7 @@
 
 A script written lazily for generating reverse shell backdoors on the go whenever you need without any hassle for your daily penetration needs .
 These backdoors are not james bond high tech stuff but rather simple ones to prevent over exploitation and limited capabilities 
-Once you generate the payload somehow execute on the conecrened system eithe Win or nix based systems  .
+Once you generate the payload somehow execute on the concerned system either Win or nix based systems  .
 Once executed you will have the capability of executing remote commands on the compromised host :) 
 Happy Hacking :D
 
