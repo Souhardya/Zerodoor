@@ -8,6 +8,8 @@ Happy Hacking :D
 
 If you want to copy please give formal credits to the author or simply fork it :)
 
+![Alt text](http://oi68.tinypic.com/vo5s29.jpg "Screenshot")
+
 # Usage 
 ```
 python zerodoor.py
