@@ -79,7 +79,7 @@ def backdoor_generator():
                    ~ 3 Immersive Backdoors ~ 
 
 
-1. Linux Backdoor Generate
+1. Linux/OSX Backdoor Generate
 2. Windows Generic Backdoor
 3. Powershell Liner Backdoor
 
