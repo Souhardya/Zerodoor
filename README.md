@@ -18,7 +18,7 @@ python zerodoor.py
 
 Nothing special it includes three basic backdoor generation capability for :- 
 
-1. Nix Based
+1. Nix/OSX Based
 2. Windows Shit  
 
 Poweshell payload generation have been added due to its sofistication and presistence :)
