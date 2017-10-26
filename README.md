@@ -50,6 +50,5 @@ a issue at my repository and I will try to fix it as
 soon as possible . Maybe later cuz I am hell lazy 
  
 
-# Illegal Usage is allowed !!
+# Illegal Usage is not allowed !!
 
-Cause havoc guys :)
