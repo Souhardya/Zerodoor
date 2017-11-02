@@ -7,27 +7,27 @@ Once executed you will have the capability of executing remote commands on the c
 Happy Hacking :D
 
 If you want to copy please give formal credits to the author or simply fork it :)
-11
+
 
 ![Alt text](http://oi68.tinypic.com/vo5s29.jpg "Screenshot")
 
-12
+
 
 ​
 
-13
+
 
 # Usage 
 
-14
+
 
 ```
 
-15
+
 
 python zerodoor.py
 
-16
+
 
 ​
 ```
