@@ -1,4 +1,26 @@
-# ZeroDoor
+11
+
+![Alt text](http://oi68.tinypic.com/vo5s29.jpg "Screenshot")
+
+12
+
+​
+
+13
+
+# Usage 
+
+14
+
+```
+
+15
+
+python zerodoor.py
+
+16
+
+​# ZeroDoor
 
 A script written lazily for generating reverse shell backdoors on the go whenever you need without any hassle for your daily penetration needs .
 These backdoors are not james bond high tech stuff but rather simple ones to prevent over exploitation and limited capabilities 
@@ -44,7 +66,7 @@ Powershell payload generation have been added due to its sofistication and presi
 
 # Author 
 
-Souhardya Sardar is a lazy guy who keeps learning and gets trolled by experts 
+I am a 15 year old nerd who loves malware / botnets and I code in several languages in my free time 
 Github :- github.com/Souhardya 
 
 # Donate and contact :3 
