@@ -1,72 +1,32 @@
-
-
-![Alt text](http://oi68.tinypic.com/vo5s29.jpg "Screenshot")
-
-
-
-​
-
-
-
-# Usage 
-
-
-
-```
-
-
-
-python zerodoor.py
-
-
-
-​# ZeroDoor
+# ZeroDoor
 
 A script written lazily for generating reverse shell backdoors on the go whenever you need without any hassle for your daily penetration needs .
 These backdoors are not james bond high tech stuff but rather simple ones to prevent over exploitation and limited capabilities 
-Once you generate the payload somehow execute on the concerned system either Win or nix based systems  .
+Once you generate the payload somehow execute on the conecrened system eithe Win or nix based systems  .
 Once executed you will have the capability of executing remote commands on the compromised host :) 
 Happy Hacking :D
 
-If you want to copy please give formal credits to the author or simply fork it :)
-
-
 ![Alt text](http://oi68.tinypic.com/vo5s29.jpg "Screenshot")
 
-
-
-​
-
-
-
 # Usage 
-
-
-
 ```
-
-
-
 python zerodoor.py
 
-
-
-​
 ```
 
 # Tiny Overview
 
 Nothing special it includes three basic backdoor generation capability for :- 
 
-1. Nix/OSX Based
-2. Windows Shit  
+1. Nix Based
+2. Windows ( Normal executable / PowerShell One Liner )   
 
-Powershell payload generation have been added due to its sofistication and presistence :)
+Poweshell payload generation have been added due to its sofistication and presistence :)
 
 
 # Author 
 
-I am a 15 year old nerd who loves malware / botnets and I code in several languages in my free time 
+Souhardya Sardar is a lazy guy who keeps learning and gets trolled by experts 
 Github :- github.com/Souhardya 
 
 # Donate and contact :3 
@@ -86,8 +46,7 @@ Redistribute and Modify without any restrictions :)
 If you encounter any problems regarding the code please open 
 a issue at my repository and I will try to fix it as 
 soon as possible . Maybe later cuz I am hell lazy 
-
-# Future Additions maybe :) 
+ 
 
 # Illegal Usage is not allowed !!
 
