@@ -50,3 +50,6 @@ soon as possible . Maybe later cuz I am hell lazy
 
 # Illegal Usage is not allowed !!
 
+# Python2 Support only :) 
+
+You can help me implement a python3 version too 
