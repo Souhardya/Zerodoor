@@ -19,13 +19,14 @@ python zerodoor.py
 Nothing special it includes three basic backdoor generation capability for :- 
 
 1. Nix Based
-2. Windows ( Normal executable / PowerShell One Liner )   
+2. Windows ( Normal executable / PowerShell One Liner / JavaScript Backdoor )   
 
 Poweshell payload generation have been added due to its sofistication and presistence :)
 
 # Hot Updates ? 
 
 Added docker suppport 
+JS support
 
 # Author 
 
