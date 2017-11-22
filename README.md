@@ -23,6 +23,9 @@ Nothing special it includes three basic backdoor generation capability for :-
 
 Poweshell payload generation have been added due to its sofistication and presistence :)
 
+# Hot Updates ? 
+
+Added docker suppport 
 
 # Author 
 
