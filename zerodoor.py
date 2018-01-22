@@ -7,7 +7,10 @@ import io
 import socket
 
 
+
 def main():
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
     print """
 _____________________________________________________________ 
 |                                                   ^^^^^^^^\ |
@@ -382,3 +385,4 @@ if __name__ == '__main__':
    
 
     
+
